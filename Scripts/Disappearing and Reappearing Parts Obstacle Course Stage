@@ -1,1 +1,25 @@
+local disapearingpartsfolder = game.Workspace.Folder
+local table = {disapearingpartsfolder.disappearingpart1,disapearingpartsfolder.disappearingpart2,
+disapearingpartsfolder.disappearingpart3}
 
+function disapear()
+	for i, disappearingParts in pairs(table) do
+		disappearingParts.Transparency = 1
+		disappearingParts.CanCollide = false
+		wait(1)
+	end
+end
+
+function reappear()
+	for i, disappearingParts in pairs(table) do
+		disappearingParts.Transparency = 0
+		disappearingParts.CanCollide = true
+		wait(1)
+	end
+end
+
+
+while true do 
+	disapear()
+	reappear()
+end

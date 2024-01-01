@@ -1,0 +1,9 @@
+game.Players.PlayerAdded:Connect(function(player)
+	local leaderstats = Instance.new("Folder", player)
+	leaderstats.Name = "leaderstats"
+	
+	local points = Instance.new("IntValue", leaderstats)
+	points.Name = "Points"
+	local cash = Instance.new("IntValue", leaderstats)
+	cash.Name = "Cash"
+end)

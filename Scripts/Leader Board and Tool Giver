@@ -1,3 +1,5 @@
+--this is for the leaderboard
+
 game.Players.PlayerAdded:Connect(function(player)
 	local leaderstats = Instance.new("Folder", player)
 	leaderstats.Name = "leaderstats"
@@ -6,4 +8,22 @@ game.Players.PlayerAdded:Connect(function(player)
 	points.Name = "Points"
 	local cash = Instance.new("IntValue", leaderstats)
 	cash.Name = "Cash"
+end)
+
+--this is for the tool giver
+--this went in StarterPlayerScripts as a local script 
+--if you clicked the part it gave you a tool
+
+local part = Instance.new("Part", workspace)
+local clickDetector = Instance.new("ClickDetector", part)
+local player = game.Players.LocalPlayer
+
+clickDetector.MouseClick:Connect(function()
+	Instance.new("Part", game.Workspace)
+	local backPack = player:WaitForChild("Backpack")
+	local toolE = Instance.new("Tool", backPack)
+	local tool = Instance.new("Part", toolE)
+	tool.Name = "Handle"
+	tool.Size = Vector3.new(1, 5, 1)
+	tool.Anchored = false 
 end)
